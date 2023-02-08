@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Calculator</title>
+    <link rel="icon" href="./Images/logo-1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <div class="container d-flex  flex-column align-items-center justify-content-center">
+       
+        
+       <h1 class="text">Scientific Calculator</h1>
+
+        <div class="main_body">
+            <div class="row">
+                <div class="input_element">
+                    <input type="text" id="input" onclick="empty_element()" placeholder="0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc">
+                    <button class="bold_digit" onclick="expression_value(value)" value="deg" id="degree">DEG</button>
+                    <button class="bold_digit" onclick="expression_value(value)" value="fe">F-E</button>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="calc_bottom ">
+
+                    <button class="bold_digit" onclick="expression_value(value)" value="memory_clear" id="clear"
+                        disabled>MC</button>
+                    <button class="bold_digit" onclick="expression_value(value)" value="memory_recall" id="recall"
+                        disabled>MR</button>
+                    <button class="bold_digit" onclick="expression_value(value)" value="memory_add">M+</button>
+                    <button class="bold_digit" onclick="expression_value(value)" value="memory_sub">M-</button>
+                    <button class="bold_digit" onclick="expression_value(value)" value="memory_store">MS</button>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_drop d-flex">
+                    <div class="dropdown">
+                        <button class="digit_light" class="trigo btn btn-secondary " type="button"
+                            data-bs-toggle="dropdown" aria-expanded="true">
+                            <span id="trigo_symbol"> &#x25FF;</span> Trignometry <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <ul class="dropdown-menu" onclick="event.stopPropagation()">
+                            <div class="dropdown_display1">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item dropdown_display1"
+                                            onclick="change_dropdown('dropdown_display2','dropdown_display1')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="sin">sin</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="cos">cos</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="tan">tan</button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item dropdown_display1"
+                                            onclick="change_dropdown('dropdown_display3','dropdown_display1')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="cosec">cosec</button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="sec">sec</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="expression_value(value)" value="cot">cot</button></li>
+                                </div>
+                            </div>
+                            <div class="dropdown_display2">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="change_dropdown('dropdown_display2','dropdown_display1')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sin_inverse">sin<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cos_inverse">cos<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="tan_inverse">tan<sup>-1</sup></button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cosec_inverse">cosec<sup>-1</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sec_inverse">sec<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="cot_inverse">cot<sup>-1</sup></button></li>
+                                </div>
+                            </div>
+                            <div class="dropdown_display3">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="change_dropdown('dropdown_display4','dropdown_display3')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sinh">sinh</button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cosh">cosh</button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="tanh">tanh</button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item"
+                                            onclick="change_dropdown('dropdown_display3','dropdown_display1')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cosech">cosech</button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sech">sech</button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="coth">coth</button></li>
+                                </div>
+
+                            </div>
+                            <div class="dropdown_display4">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="change_dropdown('dropdown_display3','dropdown_display4')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sinh_inverse">sinh<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cosh_inverse">cosh<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="tanh_inverse">tanh<sup>-1</sup></button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item"
+                                            onclick="change_dropdown('dropdown_display2','dropdown_display4')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="expression_value(value)"
+                                            value="cosech_inverse">cosech<sup>-1</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="sech_inverse">sech<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                            value="coth_inverse">coth<sup>-1</sup></button></li>
+                                </div>
+
+
+
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button id="class" class="trigo btn btn-secondary digit_light" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            &#402; Functions <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="div_1 d-flex">
+                                <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                        value="modulus">|x|</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                        value="floor_fun">&LeftFloor;x&RightFloor;</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                        value="ceiling_fun">&LeftCeiling;x&RightCeiling;</button>
+                                </li>
+                            </div>
+                            <div class="div_1 d-flex">
+                                <li><button class="dropdown-item" type="button" onclick="expression_value(value)"
+                                        value="random">rand</button></li>
+
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button onclick="change_dropdown('display_2','display_1')">2<sup>nd</sup></button>
+                    <button onclick="expression_value(value)" value="pi">&#x3C0;</button>
+                    <button onclick="expression_value(value)" value="e">e</button>
+                    <button class="button" onclick="input_element()">C</button>
+                    <button id="cross_1" onclick="expression_value(value)" value="backspace"><img src="./Images/cross.png" class="cross"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick=" expression_value(value)" value="x^2">x<sup>2</sup</button>
+                            <button class="display_2" onclick=" expression_value(value)" value='x^3'>x<sup>3</sup>
+
+                            </button>
+                            <button onclick="expression_value(value)"
+                                value="x_inverse"><sup>1</sup>/<sub>x</sub></button>
+                            <button onclick="expression_value(value)" value="modulus">| x |</button>
+                            <button onclick="expression_value(value)" value="exp">exp</button>
+                            <button onclick="expression_value(value)" value="%">mod</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="expression_value(value)" value="square_root">&#8730;x</button>
+                    <button class="display_2" onclick="expression_value(value)"
+                        value="cube_root"><sup>3</sup>&#8730;x</button>
+                    <button onclick="expression_value(value)" value="open_bracket">(</button>
+                    <button onclick="expression_value(value)" value="close_bracket">)</button>
+                    <button onclick="expression_value(value)" value="factorial">n!</button>
+                    <button class="button" onclick="expression(value)" value="/">&#247;</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="expression_value(value)" value="**">x<sup>y</sup></button>
+                    <button class="display_2" onclick=" expression(value)" value="yroot"><sup>y</sup>&#8730;x</button>
+                    <button class="digits button" onclick="expression(value)" value="7">7</button>
+                    <button class="digits button" onclick="expression(value)" value="8">8</button>
+                    <button class="digits button" onclick="expression(value)" value="9">9</button>
+                    <button class="button" onclick="expression(value)" value="*">x</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="expression_value(value)" value="power">10<sup>x</sup></button>
+                    <button class="display_2" onclick="expression_value(value)"
+                        value="power_2">2<sup>x</sup></sup></button>
+                    <button class="digits button" onclick="expression(value)" value="4">4</button>
+                    <button class="digits button" onclick="expression(value)" value="5">5</button>
+                    <button class="digits button" onclick="expression(value)" value="6">6</button>
+                    <button onclick="expression(value)" value="-">-</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="button display_1" onclick="expression_value(value)" value="log">log</button>
+                    <button class="button display_2" onclick="expression(value)" value="logy">log<sub>y</sub>x</button>
+                    <button class="digits button" onclick="expression(value)" value="1">1</button>
+                    <button class="digits button" onclick="expression(value)" value="2">2</button>
+                    <button class="digits button" onclick="expression(value)" value="3">3</button>
+                    <button class="button" onclick="expression(value)" value="+">+</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="expression_value(value)" value="lnx">ln</button>
+                    <button class="display_2" onclick="expression_value(value)" value="e_x">e<sup>x</sup></button>
+                    <button onclick="expression_value(value)" value="sign_change"
+                        class="digits"><sup>+</sup>/<sub>-</sub></button>
+                    <button class="digits" onclick="expression(value)" value="0">0</button>
+                    <button class="digits" onclick="expression(value)" value=".">.</button>
+                    <button class="button" onclick="equal()">=</button>
+                </div>
+            </div>
+
+        </div>
+    
+       </div>
+
+
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
