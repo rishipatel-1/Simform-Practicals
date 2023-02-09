@@ -14,6 +14,6 @@ https://lighthearted-monstera-54603a.netlify.app/
 ## Practical-3 - SCIENTIFIC CALCULATOR using JAVASCRIPT
 
 <h4>Check live</h4>
-https://rococo-bienenstitch-42d177.netlify.app/
+https://startling-sunburst-c97816.netlify.app/
 
  
