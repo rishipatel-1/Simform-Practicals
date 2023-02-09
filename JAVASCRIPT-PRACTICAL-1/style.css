@@ -189,13 +189,13 @@ button:hover {
     }
     .main_body {
      width: 453px;
-     height: 60%;
+     height: 75%;
     }
   }
   @media only screen and (max-width: 550px){
      .main_body {
     width: 370px;
-    height: 60%;
+    height: 75%;
      }
      .calc_drop button{
         width: 138px;
@@ -213,7 +213,7 @@ button:hover {
     }
     .main_body {
      width: 93%;
-     height: 60%;
+     height: 75%;
     }
   }
   @media only screen and (max-width: 350px){
