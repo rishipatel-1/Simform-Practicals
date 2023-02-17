@@ -9,6 +9,9 @@
   margin-top: 60px;
   margin-right: 50px;
 }
+.img-top{
+  width: 100%;
+}
 
 #hero {
 
@@ -78,6 +81,9 @@ a:hover {
 .navbar.scroll .nav-link {
   color: #8f8f8f;
 }
+.text-white{
+  background-color:black;
+}
 
 .navbar.scroll .nav-link:hover,
 .navbar.scroll .nav-link.current,
@@ -135,7 +141,11 @@ a:hover {
   flex-flow: column;
   justify-content: center;
 }
-
+.img-bottom{
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
 .text-container-inner {
 
   bottom: -12%;
@@ -146,6 +156,7 @@ a:hover {
 .title {
   font-size: 2.5rem;
   text-shadow: 2px 2px 2px #333;
+  background-color: black;
 }
 
 .intro-next {
@@ -153,6 +164,12 @@ a:hover {
   bottom: 100px;
   left: 0;
   right: 0;
+}
+.text-index{
+  z-index: 1;
+ background-color: black;
+ opacity: 0.5;
+ color: white;
 }
 
 @media (max-height: 480px) {
@@ -217,8 +234,22 @@ p {
     padding: 10px;
     border-radius: 3px;
   }
+  .title {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px #333;
+    background-color: black;
+  }
 
   .navbar-collapse .nav-link {
     color: #8f8f8f;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .title {
+    font-size: 1rem;
+    text-shadow: 2px 2px 2px #333;
+    background-color: black;
   }
 }
