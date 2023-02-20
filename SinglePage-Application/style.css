@@ -1,4 +1,4 @@
-* {
+body{
   margin: 0;
   padding: 0;
 }
@@ -11,6 +11,19 @@
 }
 .img-top{
   width: 100%;
+}
+.text_contact{
+  z-index: 1;
+  background-image: url('./Images/conatct.jpg');
+  height: 60%;
+position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.text-container-inner{
+background-color: black;
 }
 
 #hero {
@@ -81,9 +94,7 @@ a:hover {
 .navbar.scroll .nav-link {
   color: #8f8f8f;
 }
-.text-white{
-  background-color:black;
-}
+
 
 .navbar.scroll .nav-link:hover,
 .navbar.scroll .nav-link.current,
@@ -91,16 +102,7 @@ a:hover {
   color: #3496d8;
 }
 
-.navbar-toggler {
-  border: 1px solid white;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
-.navbar-toggler-icon {
-  color: white;
-  padding-top: 6px;
-}
 
 .navbar.scroll .navbar-toggler {
   border: 1px solid #8f8f8f;
@@ -150,7 +152,7 @@ a:hover {
 
   bottom: -12%;
   position: relative;
-  right: 2%;
+
 }
 
 .title {
@@ -225,18 +227,14 @@ p {
 
 @media (max-width: 767px) {
   .navbar-nav {
-    max-width: 200px;
+    
     text-align: right;
   }
 
   .navbar-collapse {
     background-color: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 3px;
   }
   .title {
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 2px #333;
     background-color: black;
   }
 
@@ -248,8 +246,6 @@ p {
 @media (max-width: 450px) {
 
   .title {
-    font-size: 1rem;
-    text-shadow: 2px 2px 2px #333;
     background-color: black;
   }
 }
