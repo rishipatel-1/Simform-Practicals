@@ -4,18 +4,22 @@ body{
 }
 
 .img-fluid {
-  max-width: 100% !important;
-  height: 84% !important;
-  margin-top: 60px;
-  margin-right: 50px;
+
+    max-width: 100% !important;
+    height: 87% !important;
+    margin-top: 19px;
+    margin-left: 15px;
+
 }
+
 .img-top{
   width: 100%;
 }
 .text_contact{
   z-index: 1;
   background-image: url('./Images/conatct.jpg');
-  height: 60%;
+  width: 100%;
+  height: 80%;
 position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,20 +30,6 @@ position: relative;
 background-color: black;
 }
 
-#hero {
-
-  height: 100vh;
-  min-height: 375px;
-  padding-top: 2rem;
-  width: 100% !important;
-
-  background-image: url('./Images/2.jpg');
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 
 #contact {
   color: white;
@@ -112,37 +102,18 @@ a:hover {
   color: #8f8f8f;
 }
 
-@media (min-height: 830px) {
-  #hero {
-    background-position: center -210px;
+
+@media(max-height: 580px) {
+  .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    width: 350px;
   }
+
 }
 
-@media (min-height: 680px) and (max-height: 829px) {
-  #hero {
-    background-position: center -300px;
-  }
-}
 
-@media (min-height: 500px) and (max-height: 679px) {
-  #hero {
-    background-position: center -400px;
-  }
-}
 
-@media (max-height: 499px) {
-  #hero {
-    background-position: center -450px;
-  }
-}
-
-.text-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-}
 .img-bottom{
   bottom: 0px;
   right: 0px;
@@ -150,8 +121,8 @@ a:hover {
 }
 .text-container-inner {
 
-  bottom: -12%;
-  position: relative;
+  width: 100%;
+  background-color: black;
 
 }
 
@@ -159,6 +130,7 @@ a:hover {
   font-size: 2.5rem;
   text-shadow: 2px 2px 2px #333;
   background-color: black;
+  z-index: -1;
 }
 
 .intro-next {
@@ -181,13 +153,14 @@ a:hover {
 }
 
 .section-title {
-  font-size: 2.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 .intro-text {
   font-size: 1.2rem;
   line-height: 1.4;
+
 }
 
 .icon {
@@ -202,28 +175,12 @@ a:hover {
   font-size: 0.9rem;
 }
 
-.gallery {
-  padding-top: 70px;
-  padding-bottom: 120px;
-}
 
 p {
   line-height: 1.9;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1275px;
-  }
 
-  .gallery {
-    max-width: 1290px;
-  }
-
-  .container-contact {
-    max-width: 1063px;
-  }
-}
 
 @media (max-width: 767px) {
   .navbar-nav {
@@ -243,9 +200,3 @@ p {
   }
 }
 
-@media (max-width: 450px) {
-
-  .title {
-    background-color: black;
-  }
-}
