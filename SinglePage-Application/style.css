@@ -1,0 +1,202 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.img-fluid {
+
+    max-width: 100% !important;
+    height: 87% !important;
+    margin-top: 19px;
+    margin-left: 15px;
+
+}
+
+.img-top{
+  width: 100%;
+}
+.text_contact{
+  z-index: 1;
+  background-image: url('./Images/conatct.jpg');
+  width: 100%;
+  height: 80%;
+position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.text-container-inner{
+background-color: black;
+}
+
+
+#contact {
+  color: white;
+  background-image: url(./Images/conatct.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 740px;
+  position: relative;
+  padding: 0 !important;
+  padding-top: 160px;
+}
+
+a:hover {
+  color: black !important;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid rgb(199, 199, 199);
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.navbar-brand:hover,
+.navbar.scroll .navbar-brand:hover {
+  color: #3496d8;
+}
+
+.navbar.scroll .navbar-brand {
+  color: #8f8f8f;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.navbar.scroll .nav-link {
+  color: #8f8f8f;
+}
+
+
+.navbar.scroll .nav-link:hover,
+.navbar.scroll .nav-link.current,
+.nav-link:hover {
+  color: #3496d8;
+}
+
+
+
+.navbar.scroll .navbar-toggler {
+  border: 1px solid #8f8f8f;
+}
+
+.navbar.scroll .navbar-toggler-icon {
+  color: #8f8f8f;
+}
+
+
+@media(max-height: 580px) {
+  .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    width: 350px;
+  }
+
+}
+
+
+
+.img-bottom{
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.text-container-inner {
+
+  width: 100%;
+  background-color: black;
+
+}
+
+.title {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 2px #333;
+  background-color: black;
+  z-index: -1;
+}
+
+.intro-next {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+.text-index{
+  z-index: 1;
+ background-color: black;
+ opacity: 0.5;
+ color: white;
+}
+
+@media (max-height: 480px) {
+  .text-container-inner {
+    margin-top: -40px;
+  }
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+}
+
+.icon {
+  display: block;
+  margin-bottom: 55px;
+  color: #3496d8;
+}
+
+.work-description {
+  max-width: 650px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+
+p {
+  line-height: 1.9;
+}
+
+
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    
+    text-align: right;
+  }
+
+  .navbar-collapse {
+    background-color: rgb(255, 255, 255);
+  }
+  .title {
+    background-color: black;
+  }
+
+  .navbar-collapse .nav-link {
+    color: #8f8f8f;
+  }
+}
+
