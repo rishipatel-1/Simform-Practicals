@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <div class="col-12 m-0 p-0 text-dark text-center mt-3 mb-3">
         <h1>Product Management System</h1>
         <hr class="text-white">
@@ -28,10 +27,11 @@
                 <div class="modal-header">
                     <h1 class="modal-title popup-text fs-5" id="add-new-product-modal-label" onclick="readformData()">
                         Add New Product</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="OnClose()"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="add-new-product-form">
+                    <form id="addFormDetails">
 
 
 
@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group col-12 mb-5">
                                 <label class="popup-text" for="name">Image Picture</label>
-                                <input type="file" class="form-control" id="Image" required>
+                                <input type="file" class="form-control formImage" id="Image" required>
 
                             </div>
                             <div class="form-group col-12 mb-5">
@@ -59,8 +59,9 @@
 
                     </form>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="readformData()">Add Product</button>
+                        <button type="button" class="btn btn-secondary" id="closebtn" data-bs-dismiss="modal"
+                            onclick="OnClose()">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="readformData()">Add Product</button>
                     </div>
                 </div>
 
@@ -107,7 +108,8 @@
 
                     </form>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick="ClearInput()">Close</button>
                         <button type="submit" class="btn btn-primary" onclick="updateData()">update Product</button>
                     </div>
                 </div>
@@ -117,14 +119,6 @@
     </div>
     </div>
 
-
-
-
-
-
-
-
-
     <div class="container-fluid">
         <div class="d-flex  m-0 p-0 m-2 justify-content-end flex-column  flex-md-row">
 
@@ -133,8 +127,6 @@
                     placeholder="Search a product..." oninput="searchProducts()">
             </div>
             <div>
-
-
                 <button type="button" class="btn btn-primary m-2 " data-bs-toggle="modal"
                     data-bs-target="#add-new-product-modal">Add New Product</button>
             </div>
@@ -148,12 +140,12 @@
                     aria-label="Basic radio toggle button group">
                     <div class="col-12">
                         <input type="radio" class="btn-check" name="sort-btn" id="product-id-sort-btn" value="ProductId"
-                            autocomplete="off" checked onclick="sortProducts('ProductId')">
+                            autocomplete="off" checked onclick="sortItems('ProductId')">
                         <label class="btn btn-outline-primary" for="product-id-sort-btn">Product Id</label>
                         </input>
 
                         <input type="radio" class="btn-check" name="sort-btn" id="product-name-sort-btn"
-                            value="ProductName" autocomplete="off" onclick="sortProducts
+                            value="ProductName" autocomplete="off" onclick="sortItems
                             ('ProductName')">
                         <label class="btn btn-outline-primary" for="product-name-sort-btn">Product Name</label>
                         </input>
@@ -161,32 +153,26 @@
                         <input type="radio" class="btn-check" name="sort-btn" id="product-price-sort-btn" value="Price"
                             autocomplete="off" />
                         <label class="btn btn-outline-primary" for="product-price-sort-btn"
-                            onclick="sortProducts()">Product Price (Low to High)</label>
+                            onclick="sortItems()">Product Price (Low to High)</label>
                         </input>
 
                         <input type="radio" class="btn-check" name="sort-btn" id="product-price-htl-sort-btn"
                             value="Price-htl" autocomplete="off" />
                         <label class="btn btn-outline-primary" for="product-price-htl-sort-btn"
-                            onclick="sortProducts('hl')">Product Price (High to Low)</label>
+                            onclick="sortItems('hl')">Product Price (High to Low)</label>
                         </input>
-
-
                     </div>
-
-
                 </div>
 
             </div>
             <div class="w-sm-100  filterinput p-4">
 
                 <label class="fw-bold m-2 mt-3">Filter Products By</label>
-                <select class="form-select" id="filter-select-input" onchange="filterProducts(this.value)"></select>
-
+                <select class="form-select" id="filter-select-input" onchange="FilterItems(this.value)"></select>
             </div>
         </div>
-        <div class="row d-flex justify-content-center mt-5" id="products-display">
+        <div class="row d-flex justify-content-center mt-5 productDiv" id="products-display">
         </div>
-
     </div>
 
 

@@ -29,6 +29,10 @@ body{
 .filterinput{
     width: 30%;
 }
+.productDiv{
+    min-height: 50vh;
+}
+
 @media screen and (max-width:800px){
     .filterinput{
         width: 70%;
