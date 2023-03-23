@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+
+  
+   background-color: rgb(117, 206, 223);
+   max-width: 100% !important;
+   font-family:Roboto,Arial,sans-serif;
+
+}
+
+.main_body {
+    width: 450px;
+    height: 600px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 6px;
+
+
+}
+.text{
+    font-family: Roboto,Arial, sans-serif;
+    color: rgb(221 255 216);
+    position: relative;
+    top: -4%;
+    font-weight: 600;
+    font-size: 55px;
+}
+
+.row {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.calc_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+
+.col-5 {
+    width: 98%;
+}
+
+
+.calc_bottom button {
+    width: 90px;
+    height: 45px;
+    margin: 2px;
+    font-size: large;
+    border: none;
+    background-color: rgb(242, 242, 242);
+
+}
+.equalButton {
+    background-color: #00e67b !important;
+}
+
+.trigo {
+    background-color: rgb(240, 240, 240) !important;
+    color: black !important;
+    border-radius: 0 !important;
+    margin: 2px !important;
+
+}
+
+
+button:hover {
+    background-color: rgb(99, 203, 232) !important;
+}
+
+.calc_drop {
+
+
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+.calc_drop button {
+    width: 171px;
+    height: 45px;
+    border: none;
+    margin: 2px 2px 2px 2px !important;
+
+
+
+}
+
+.input_element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+
+}
+
+
+.input_element input {
+    background-color: rgb(255, 255, 255);
+    text-align: end;
+    font-size: 50px;
+    border: none;
+    width: 100%;
+    height: 94px;
+
+}
+
+.calc {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+
+}
+.cross{
+    height: 30px;
+    background-color:rgb(245, 87, 87);
+}
+#cross_1{
+    background-color:rgb(245, 87, 87);
+}
+#cross_1:hover{
+   cursor: pointer;
+    background-color:rgb(245, 87, 87) !important;
+}
+.cross:hover{
+   cursor: pointer;
+    background-color:rgb(245, 87, 87) !important;
+}
+
+.calc button {
+    width: 83px;
+    height: 45px;
+    margin: 3px -1px 2px 2px;
+    font-size: large;
+    border: none;
+}
+
+.digits {
+    background-color: #fff !important;
+    font-weight: bold;
+}
+
+.bold_digit {
+    font-weight: bolder !important;
+}
+
+.digit_light {
+    font-weight: 600 !important;
+}
+
+.light {
+    font-weight: 400 !important;
+    opacity: 0.5 !important;
+}
+
+.display_2 {
+    display: none;
+}
+
+.dropdown_display2 {
+    display: none;
+}
+
+.dropdown_display3 {
+    display: none;
+}
+
+.dropdown_display4 {
+    display: none;
+}
+
+.dropdown-item {
+    width: 100px !important;
+}
+
+#trigo_symbol {
+    position: relative;
+    top: -4%;
+    font-weight: 500 !important;
+}
+@media only screen and (max-width: 600px) {
+    
+    .text{
+        font-size: 35px;
+    }
+    .main_body {
+     width: 453px;
+     height: 71%;
+    }
+  }
+  @media only screen and (max-width: 550px){
+     .main_body {
+    width: 370px;
+    height: 71%;
+     }
+     .calc_drop button{
+        width: 138px;
+     }
+     .calc button{
+        width: 68px;
+     }
+}
+@media only screen and (max-width: 400px) {
+    .calc_drop button{
+        width: 135px;
+    }
+    .text{
+        font-size: 35px;
+    }
+    .main_body {
+     width: 93%;
+     height: 71%;
+    }
+  }
+  @media only screen and (max-width: 350px){
+.calc_drop button {
+    width: 150px !important;}
+    
+}
+  @media only screen and (max-width: 345px){
+    .text{
+        font-size: 25px;
+    }
+    .calc_drop button {
+    width: 129px !important;
+}
+.calc button{
+    width: 49px;
+ }
+
+
+    .digit_light{
+        font-size: small !important;
+        font-weight: 600;
+    }
+}
