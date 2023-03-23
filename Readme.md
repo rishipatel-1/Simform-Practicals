@@ -26,6 +26,11 @@ https://euphonious-strudel-d9235d.netlify.app/
 <h4>Check live</h4>
 https://astounding-trifle-b24b6e.netlify.app/
 
+## Practical-6 - SCIENTIFIC CALCULATOR using TYPESCRIPT
+
+<h4>Check live</h4>
+https://frabjous-tiramisu-6bd545.netlify.app/
+
 
 
 
