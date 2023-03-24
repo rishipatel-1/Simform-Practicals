@@ -1,3 +1,4 @@
+"use strict";
 var dropdownToggleValue = 1;
 var logbaseChange;
 var ToggleValue = 1;
@@ -11,7 +12,7 @@ function equalElement() {
     }
     if ((input.value.indexOf("logy") !== -1)) {
         var logbaseChange_2 = logy(input.value);
-        logx_base_y(Number(logbaseChange_2[0]), Number(logbaseChange_2[1]));
+        logxBasey(Number(logbaseChange_2[0]), Number(logbaseChange_2[1]));
     }
     try {
         input.value = eval(input.value);
@@ -38,10 +39,10 @@ function logy(value) {
     var o = value.substring(m + 4, value.length);
     return [o, n];
 }
-function logx_base_y(num1, num2) {
+function logxBasey(num1, num2) {
     input.value = (Math.log(num1) / Math.log(num2)).toString();
 }
-function cr() {
+function ToggleClearandRecall() {
     document.getElementById('clear').disabled = false;
     document.getElementById('recall').disabled = false;
 }
@@ -71,10 +72,6 @@ function changeDropdown(val1, val2) {
 }
 function ElementValue(value) {
     switch (value) {
-        case 'C': {
-            input.value = "";
-            break;
-        }
         case 'x^2': {
             input.value = Math.pow(Number(input.value), 2).toString();
             break;
@@ -83,11 +80,11 @@ function ElementValue(value) {
             input.value = Math.pow(Number(input.value), 3).toString();
             break;
         }
-        case 'square_root': {
+        case 'squareRoot': {
             input.value = Math.sqrt(Number(input.value)).toString();
             break;
         }
-        case 'cube_root': {
+        case 'cubeRoot': {
             input.value = Math.pow(Number(input.value), 0.3334).toFixed(1);
             break;
         }
@@ -114,19 +111,19 @@ function ElementValue(value) {
             input.value = Math.pow(10, Number(input.value)).toString();
             break;
         }
-        case 'power_2': {
+        case 'twoTothePowerValue': {
             input.value = Math.pow(2, Number(input.value)).toString();
             break;
         }
-        case 'e_x': {
+        case 'ePowerx': {
             input.value = Math.exp(Number(input.value)).toString();
             break;
         }
-        case 'floor_fun': {
+        case 'floorFunction': {
             input.value = Math.floor(Number(input.value)).toString();
             break;
         }
-        case 'ceiling_fun': {
+        case 'ceilingFunction': {
             input.value = Math.ceil(Number(input.value)).toString();
             break;
         }
@@ -143,11 +140,11 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'open_bracket': {
+        case 'openBracket': {
             input.value += "(";
             break;
         }
-        case 'close_bracket': {
+        case 'closeBracket': {
             input.value += ")";
             break;
         }
@@ -163,20 +160,20 @@ function ElementValue(value) {
             input.value = Math.random().toString();
             break;
         }
-        case 'sign_change': {
+        case 'signChange': {
             input.value = ((-1) * (Number(input.value))).toString();
             break;
         }
-        case 'memory_clear': {
+        case 'memoryClear': {
             memoryStack = [];
             break;
         }
-        case 'memory_recall': {
+        case 'memoryRecall': {
             input.value = memoryStack[memoryStack.length - 1].toString();
             break;
         }
-        case 'memory_add': {
-            cr();
+        case 'memoryAdd': {
+            ToggleClearandRecall();
             if (memoryStack.length == 1) {
                 memoryStack.push(parseInt(input.value));
             }
@@ -185,8 +182,8 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'memory_sub': {
-            cr();
+        case 'memorySubtract': {
+            ToggleClearandRecall();
             if (memoryStack.length == 0) {
                 memoryStack.push((-1) * parseInt(input.value));
             }
@@ -195,13 +192,12 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'memory_store': {
-            cr();
+        case 'memoryStore': {
+            ToggleClearandRecall();
             if (memoryStack.length == 0) {
                 memoryStack.push(parseFloat(input.value));
             }
             else {
-                console.log("add");
                 memoryStack.push(parseFloat(input.value));
             }
             break;
@@ -223,7 +219,7 @@ function ElementValue(value) {
             input.value = Math.abs(Number(input.value)).toString();
             break;
         }
-        case 'x_inverse': {
+        case 'xInverse': {
             input.value = (1 / (Number(input.value))).toString();
             break;
         }
@@ -315,7 +311,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'sin_inverse': {
+        case 'sinInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.asin(Number(input.value))).toString();
             }
@@ -324,7 +320,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'cos _inverse': {
+        case 'cosInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.acos(Number(input.value))).toString();
             }
@@ -333,7 +329,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'tan_inverse': {
+        case 'tanInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.atan(Number(input.value))).toString();
             }
@@ -342,7 +338,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'cosec_inverse': {
+        case 'cosecInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.asin(1 / Number(input.value)))).toString();
             }
@@ -351,7 +347,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'sec_inverse': {
+        case 'secInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.acos(1 / Number(input.value)))).toString();
             }
@@ -360,7 +356,7 @@ function ElementValue(value) {
             }
             break;
         }
-        case 'cot_inverse': {
+        case 'cotInverse': {
             if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.atan(1 / Number(input.value)))).toString();
             }
@@ -399,32 +395,32 @@ function ElementValue(value) {
             input.value = result;
             break;
         }
-        case 'sinh_inverse': {
+        case 'sinhInverse': {
             var result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) + 1))).toString();
             input.value = result;
             break;
         }
-        case 'cosh_inverse': {
+        case 'coshInverse': {
             var result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) - 1))).toString();
             input.value = result;
             break;
         }
-        case 'tanh_inverse': {
+        case 'tanhInverse': {
             var result = (0.5 * Math.log((1 + Number(input.value)) / (1 - Number(input.value)))).toString();
             input.value = result;
             break;
         }
-        case 'cosech_inverse': {
+        case 'cosechInverse': {
             var result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) + 1))).toString();
             input.value = result;
             break;
         }
-        case 'sech_inverse': {
+        case 'sechInverse': {
             var result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) - 1))).toString();
             input.value = result;
             break;
         }
-        case 'coth_inverse': {
+        case 'cothInverse': {
             var result = (0.5 * Math.log((Number(input.value) + 1) / (Number(input.value) - 1))).toString();
             input.value = result;
             break;
