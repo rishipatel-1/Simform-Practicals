@@ -1,5 +1,5 @@
 # LIVE DEMO 
-
+<hr/>
 
 ## Practical-1 - HTML & CSS using BOOTSTRAP
 
