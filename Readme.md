@@ -5,6 +5,7 @@
 
 <h4>Check live</h4>
 https://flourishing-mermaid-d53027.netlify.app/
+<hr/>
 
 ## Practical-2 - HTML & CSS using MEDIAQUERY
 
