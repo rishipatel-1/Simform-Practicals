@@ -9,21 +9,20 @@ interface RegisteredUser {
   password: string;
 }
 
-// Show register form
+
 loginToggle.addEventListener("click", (event) => {
   event.preventDefault();
   loginForm.classList.add("active");
   registerForm.classList.remove("active");
 });
 
-// Show login form
 registerToggle.addEventListener("click", (event) => {
   event.preventDefault();
   loginForm.classList.remove("active");
   registerForm.classList.add("active");
 });
 
-// Handle login form submit
+
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const email = (document.getElementById("email") as HTMLInputElement).value;
@@ -40,7 +39,6 @@ loginForm.addEventListener("submit", (event) => {
 });
 
 
-// Handle register form submit
 registerForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = (document.getElementById("reg-name") as HTMLInputElement).value;

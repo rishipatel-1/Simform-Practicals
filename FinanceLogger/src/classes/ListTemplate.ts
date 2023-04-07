@@ -5,7 +5,7 @@ enum Position {
   End = 'end'
 }
 
-function logRender(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+function logRender(target: unknown, propertyKey: string, descriptor:PropertyDescriptor) {
   const originalRender = descriptor.value;
 
   descriptor.value = function(item: HasFormatter, heading: string, pos: Position) {
