@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="main">
+        <h1>Finance Logger</h1>
+        <p>Welcome, Login To add Your Data</p>
+        <ul class="item-list"></ul>
+      </div>
+      <div class="form-container">
+        <form id="login-form" class="form active">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">Login</button>
+          <p class="form-toggle">Don't have an account? <a href="#">Register here</a></p>
+        </form>
+        <form id="register-form" class="form">
+          <h2>Register</h2>
+          <div class="form-group">
+            <label for="reg-name">Name</label>
+            <input type="text" id="reg-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" name="password" required />
+          </div>
+          <button type="submit">Register</button>
+          <p class="form-toggle-login">Already have an account? <a href="#">Login here</a></p>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
