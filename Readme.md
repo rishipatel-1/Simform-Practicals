@@ -25,6 +25,7 @@ https://startling-sunburst-c97816.netlify.app/
 https://euphonious-strudel-d9235d.netlify.app/
 <hr/>
 
+
 ## Practical-5 - CRUD OPERATION using JAVASCRIPT
 
 <h4>Check live</h4>
@@ -37,7 +38,3 @@ https://astounding-trifle-b24b6e.netlify.app/
 https://frabjous-tiramisu-6bd545.netlify.app/
 <hr/>
 
-
-
-
- 
