@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Calculator</title>
+    <link rel="icon" href="./Images/logo-1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <div class="container d-flex  flex-column align-items-center justify-content-center">
+       
+        
+       <h1 class="text">Scientific Calculator</h1>
+
+        <div class="main_body">
+            <div class="row">
+                <div class="input_element">
+                    <input type="text" id="input" onclick="empty_element()" placeholder="0" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc">
+                    <button class="bold_digit" onclick="ElementValue(value)" value="deg" id="degree">DEG</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="fe">F-E</button>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="calc_bottom ">
+
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryClear" id="clear"
+                        disabled>MC</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryRecall" id="recall"
+                        disabled>MR</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryAdd">M+</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memorySubtract">M-</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryStore">MS</button>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_drop d-flex">
+                    <div class="dropdown">
+                        <button class="digit_light" class="trigo btn btn-secondary " type="button"
+                            data-bs-toggle="dropdown" aria-expanded="true">
+                            <span id="trigo_symbol"> &#x25FF;</span> Trignometry <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <ul class="dropdown-menu" onclick="event.stopPropagation()">
+                            <div class="dropdown_display1">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item dropdown_display1"
+                                            onclick="changeDropdown('dropdown_display2','dropdown_display1')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="sin">sin</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="cos">cos</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="tan">tan</button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item dropdown_display1"
+                                            onclick="changeDropdown('dropdown_display3','dropdown_display1')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="cosec">cosec</button>
+                                    </li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="sec">sec</button></li>
+                                    <li><button class="dropdown-item dropdown_display1" type="button"
+                                            onclick="ElementValue(value)" value="cot">cot</button></li>
+                                </div>
+                            </div>
+                            <div class="dropdown_display2">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="changeDropdown('dropdown_display2','dropdown_display1')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="sinInverse">sin<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="cosInverse">cos<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="tanInverse">tan<sup>-1</sup></button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="cosecInverse">cosec<sup>-1</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="secInverse">sec<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="cotInverse">cot<sup>-1</sup></button></li>
+                                </div>
+                            </div>
+                            <div class="dropdown_display3">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="changeDropdown('dropdown_display4','dropdown_display3')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="sinh">sinh</button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="cosh">cosh</button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="tanh">tanh</button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item"
+                                            onclick="changeDropdown('dropdown_display3','dropdown_display1')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="cosech">cosech</button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="sech">sech</button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="coth">coth</button></li>
+                                </div>
+
+                            </div>
+                            <div class="dropdown_display4">
+                                <div class="div_1 d-flex">
+
+                                    <li><button class="dropdown-item"
+                                            onclick="changeDropdown('dropdown_display3','dropdown_display4')">2<sup>nd</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="sinhInverse">sinh<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="coshInverse">cosh<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="tanhInverse">tanh<sup>-1</sup></button></li>
+                                </div>
+
+                                <div class="div_1 d-flex">
+                                    <li><button class="dropdown-item"
+                                            onclick="changeDropdown('dropdown_display2','dropdown_display4')">hyp</button>
+                                    </li>
+                                    <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
+                                            value="cosechInverse">cosech<sup>-1</sup></button>
+                                    </li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="sechInverse">sech<sup>-1</sup></button></li>
+                                    <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                            value="cothInverse">coth<sup>-1</sup></button></li>
+                                </div>
+
+
+
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button id="class" class="trigo btn btn-secondary digit_light" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            &#402; Functions <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="div_1 d-flex">
+                                <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                        value="modulus">|x|</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                        value="floorFunction">&LeftFloor;x&RightFloor;</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                        value="ceilingFunction">&LeftCeiling;x&RightCeiling;</button>
+                                </li>
+                            </div>
+                            <div class="div_1 d-flex">
+                                <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
+                                        value="random">rand</button></li>
+
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button onclick="changeDropdown('display_2','display_1')">2<sup>nd</sup></button>
+                    <button onclick="ElementValue(value)" value="pi">&#x3C0;</button>
+                    <button onclick="ElementValue(value)" value="e">e</button>
+                    <button class="button" onclick="inputElement()">C</button>
+                    <button id="cross_1" onclick="ElementValue(value)" value="backspace"><img src="./Images/cross.png" class="cross"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick=" ElementValue(value)" value="x^2">x<sup>2</sup</button>
+                            <button class="display_2" onclick=" ElementValue(value)" value='x^3'>x<sup>3</sup>
+
+                            </button>
+                            <button onclick="ElementValue(value)"
+                                value="xInverse"><sup>1</sup>/<sub>x</sub></button>
+                            <button onclick="ElementValue(value)" value="modulus">| x |</button>
+                            <button onclick="ElementValue(value)" value="exp">exp</button>
+                            <button onclick="ElementValue(value)" value="%">mod</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="ElementValue(value)" value="squareRoot">&#8730;x</button>
+                    <button class="display_2" onclick="ElementValue(value)"
+                        value="cubeRoot"><sup>3</sup>&#8730;x</button>
+                    <button onclick="ElementValue(value)" value="openBracket">(</button>
+                    <button onclick="ElementValue(value)" value="closeBracket">)</button>
+                    <button onclick="ElementValue(value)" value="factorial">n!</button>
+                    <button class="button" onclick="expressionValue(value)" value="/">&#247;</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="ElementValue(value)" value="**">x<sup>y</sup></button>
+                    <button class="display_2" onclick=" expressionValue(value)" value="yroot"><sup>y</sup>&#8730;x</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="7">7</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="8">8</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="9">9</button>
+                    <button class="button" onclick="expressionValue(value)" value="*">x</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="ElementValue(value)" value="power">10<sup>x</sup></button>
+                    <button class="display_2" onclick="ElementValue(value)"
+                        value="twoTothePowerValue">2<sup>x</sup></sup></button>
+                    <button class="digits button" onclick="expressionValue(value)" value="4">4</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="5">5</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="6">6</button>
+                    <button onclick="expressionValue(value)" value="-">-</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="button display_1" onclick="ElementValue(value)" value="log">log</button>
+                    <button class="button display_2" onclick="expressionValue(value)" value="logy">log<sub>y</sub>x</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="1">1</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="2">2</button>
+                    <button class="digits button" onclick="expressionValue(value)" value="3">3</button>
+                    <button class="button" onclick="expressionValue(value)" value="+">+</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc_bottom ">
+                    <button class="display_1" onclick="ElementValue(value)" value="lnx">ln</button>
+                    <button class="display_2" onclick="ElementValue(value)" value="ePowerx">e<sup>x</sup></button>
+                    <button onclick="ElementValue(value)" value="signChange"
+class="digits"><sup>+</sup>/<sub>-</sub></button>
+                    <button class="digits" onclick="expressionValue(value)" value="0">0</button>
+                    <button class="digits" onclick="expressionValue(value)" value=".">.</button>
+                    <button class="equalButton" onclick="equalElement()">=</button>
+                </div>
+            </div>
+
+        </div>
+    
+       </div>
+
+
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
