@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(47 47 47);
+  }
+  
+  #root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+.logo{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXwLw_n-MbspiGP0NkGMAKW5P-jlmjIwJtAA&usqp=CAU");
+  background-repeat: no-repeat;
+  border-radius: 25px 25px;
+  width: 19rem;
+  height: 10rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+ .main{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+} 
