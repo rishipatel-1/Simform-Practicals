@@ -21,33 +21,32 @@ const UserInfo: React.FC<UserInfoProps> = (props) => {
 
   return (
 
-    <tr onMouseEnter={() => {
-      props.showPopupHandler(props)
-    }} className='user-item-main'>
-      <td className='image-username'>
+    <tr className='user-item-main'>
+      <td className='image-username' onMouseEnter={() => {
+        props.showPopupHandler(props)
+      }}>
         <img src={props.image} alt={props.username} />
         <div>
           <p className='user-name'>{props.username}</p>
           <p className='email'>{props.email}</p>
         </div>
       </td>
+
       <td className='ActiveSelect'>
-
-        <select className='active-select'>
+        <select className='active-select' defaultValue={props.status ? "Active" : "Inactive"}>
           <option value="Active">Active</option>
-          <option value="unactive">Inactive</option>
-
+          <option value="Inactive">Inactive</option>
         </select>
-
       </td>
+      
       <td className='access'>
-        <select className='people'>
-          <option value="Active">Owner</option>
-          <option value="unactive">Manager</option>
-          <option value="unactive">Employee</option>
-
+        <select className='people' defaultValue={props.access}>
+          <option value="Owner">Owner</option>
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
         </select>
       </td>
+
       <td className='access-icon'>
         <div className='icons'>
           {props.id === 1 ? <Lock /> : <Trash />}

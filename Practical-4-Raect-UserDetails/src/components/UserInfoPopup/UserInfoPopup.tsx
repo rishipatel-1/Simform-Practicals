@@ -4,11 +4,14 @@ import './UserInfoPopup.css';
 interface UserInfoPopupProps {
   selectedUser: {
     username: string;
-    email: string;
     image: string;
-    clicksReviewed: number;
+    email: string;
+    status: boolean;
+    access: string;
+    userId: number;
     MonthlyClicks: number;
-    planUses: number;
+    clicksReviewed: number;
+    id: number;
   };
 }
 
@@ -23,7 +26,8 @@ const UserInfoPopup: FC<UserInfoPopupProps> = (props) => {
       <h4>{props.selectedUser.username} </h4>
       <p>{props.selectedUser.email}</p>
       <h3>Your Plan: Standard</h3>
-      <button className='m-2'>Active User</button>
+      <button className='m-2'>{props.selectedUser.status ? "Active" : "Inactive"} User</button>
+
       <h5 className='mt-3'>Plan Uses</h5>
       <div className='plan-uses-line' style={planUsesStyle}></div>
       <div className='statistic-main mt-2'>

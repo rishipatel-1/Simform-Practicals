@@ -17,7 +17,7 @@ export const users =
             username: 'test1',
             email: 'test1@gamil.com',
             status: false,
-            access: 'Read',
+            access: 'Employee',
             clicksReviewed: 9150,
             MonthlyClicks:6251,
             planUses: 80
@@ -29,7 +29,7 @@ export const users =
             username: 'test2',
             email: 'test2@gamil.com',
             status: false,
-            access: 'Read',
+            access: 'Manager',
             clicksReviewed: 2450,
             MonthlyClicks:5024,
             planUses: 86
@@ -39,8 +39,8 @@ export const users =
             image: 'https://reqres.in/img/faces/4-image.jpg',
             username: 'test3',
             email: 'test3@gamil.com',
-            status: false,
-            access: 'Read',
+            status: true,
+            access: 'Employee',
             clicksReviewed: 2400,
             MonthlyClicks:5000,
             planUses: 71
@@ -51,7 +51,7 @@ export const users =
             username: 'test4',
             email: 'test4@gamil.com',
             status: false,
-            access: 'Read',
+            access: 'Manager',
             clicksReviewed: 2650,
             MonthlyClicks:5030,
             planUses: 81
@@ -62,7 +62,7 @@ export const users =
             username: 'test5',
             email: 'test5@gmail.com',
             status: false,
-            access: 'Read',
+            access: 'Employee',
             clicksReviewed: 2471,
             MonthlyClicks:5200,
             planUses: 49
