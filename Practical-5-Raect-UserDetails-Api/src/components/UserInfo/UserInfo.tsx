@@ -1,6 +1,7 @@
 import React from 'react';
 import './UserInfo.css';
-import { Trash, Lock, ChevronDown } from 'react-feather';
+import { Trash, Lock, } from 'react-feather';
+import { ChangeEvent } from 'react';
 
 type UserInfoProps = {
   showPopupHandler: (item: unknown) => void;
@@ -15,45 +16,48 @@ type UserInfoProps = {
   clicksReviewed: number;
   id: number;
   closePopup: () => void;
+  callBack:(data:boolean,index:number,userType:string)=>void;
 };
 
 
 const UserInfo: React.FC<UserInfoProps> = (props) => {
-
-
+  const handleStatus = (e: ChangeEvent<HTMLSelectElement>): void => {
+    props.callBack(!props.status,props.id,props.access);
+  };
+  const handleAccess = (e: ChangeEvent<HTMLSelectElement>): void => {
+    props.callBack(props.status,props.id,e.target.value);
+  };
   return (
 
-    <tr onMouseEnter={() => {
-      props.showPopupHandler(props)
-    }} className='user-item-main'>
-      <td className='image-username'>
+    <tr className='user-item-main'>
+      <td className='image-username' onMouseEnter={() => {
+        props.showPopupHandler(props)
+      }}>
         <img src={props.avatar} alt={`${props.first_name} ${props.last_name}`} />
         <div>
           <p className='user-name'>{`${props.first_name}  ${props.last_name}`}</p>
           <p className='email'>{props.email}</p>
         </div>
       </td>
+
       <td className='ActiveSelect'>
-
-        <select className='active-select'>
-          
+        <select className='active-select' onChange={handleStatus} defaultValue={props.status ? "Active" : "Inactive"}>
           <option value="Active">Active</option>
-          <option value="unactive">Inactive</option>
-          
+          <option value="Inactive">Inactive</option>
         </select>
+      </td>
 
-      </td>
       <td className='access'>
-      <select className='people'>
-          <option value="Active">Owner</option>
-          <option value="unactive">Manager</option>
-          <option value="unactive">Employee</option>
-          
+        <select className='people' onChange={handleAccess}  defaultValue={props.access}>
+          <option value="Owner">Owner</option>
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
         </select>
       </td>
+      
       <td className='access-icon'>
         <div className='icons'>
-        {props.id === 1 ? <Lock /> : <Trash />}
+          {props.id === 1 ? <Lock /> : <Trash />}
         </div>
       </td>
     </tr>
