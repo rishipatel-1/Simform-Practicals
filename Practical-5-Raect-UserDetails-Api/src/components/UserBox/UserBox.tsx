@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // library.add(faChevronsRight);
 
 import './UserBox.css';
-import {AppState} from '../../Store/store';
+import { AppState } from '../../Store/store';
 interface UserBoxProps { }
 
 const UserBox: React.FC<UserBoxProps> = (props) => {
@@ -19,21 +19,31 @@ const UserBox: React.FC<UserBoxProps> = (props) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
   const dispatch = useDispatch();
-  let count = useSelector((state: AppState) =>state);
+  let count = useSelector((state: AppState) => state);
 
   const closePopup = () => {
     setShowPopup(false);
   };
-  const callBackToSetProps = (data:boolean,index:number,userType:string):void=>{    
-    console.log(data,index);
-    
-    let allusers=[...users];
-    allusers[(index-1)%6].status=data;
-    allusers[(index-1)%6].access=userType;
-    
+  const callBackToSetProps = (data: boolean, index: number, userType: string): void => {
+    console.log(data, index);
+
+    let allusers = [...users];
+    allusers[(index - 1) % 6].status = data;
+    allusers[(index - 1) % 6].access = userType;
+
     setUsers(allusers);
-    dispatch(fetchUsersSuccess(allusers));    
+    dispatch(fetchUsersSuccess(allusers));
   }
+  const hidePopupHandler = (): void => {
+    setShowPopup(false);
+
+  };
+  const handleDeleteRow = (id: number): void => {
+
+    const updatedUsers = users.filter((user) => user.id !== id);
+    setUsers(updatedUsers);
+  };
+
   const showPopupHandler = (item: unknown) => {
     setShowPopup(true);
     setSelectedUser(item);
@@ -43,34 +53,34 @@ const UserBox: React.FC<UserBoxProps> = (props) => {
     fetch(`https://reqres.in/api/users?page=${currentPage}`)
       .then((response) => response.json())
       .then((data) => {
-        const updatedUsers = data.data.map((user:User, index:number) => ({
+        const updatedUsers = data.data.map((user: User, index: number) => ({
           ...user,
-      
+
           'status': index < 3,
           'access': index % 3 === 0 ? 'Owner' : index % 3 === 1 ? 'Manager' : 'Employee'
         }));
         setUsers(updatedUsers);
         console.log(updatedUsers);
-        
+
         dispatch(fetchUsersSuccess(updatedUsers));
         setTotalPages(data.total_pages);
       })
       .catch((error) => console.error(error));
   }, [currentPage, dispatch]);
-  
+
 
   const PreviousPageButton = () => {
     const handleClick = () => {
       setCurrentPage((prevPage) => prevPage - 1);
     };
 
-console.log(users);
+    console.log(users);
 
     return (
       <button onClick={handleClick} disabled={currentPage === 1}>
 
         <span aria-hidden="true">&laquo;</span>
-        <span className="sr-only">Previous</span>
+
 
 
       </button>
@@ -85,7 +95,7 @@ console.log(users);
     return (
       <button onClick={handleClick} disabled={currentPage === totalPages}>
         <span aria-hidden="true">&raquo;</span>
-        <span className="sr-only">Next</span>
+
       </button>
     );
   };
@@ -124,6 +134,8 @@ console.log(users);
                       id={item.id}
                       closePopup={closePopup}
                       callBack={callBackToSetProps}
+                      hidePopupHandler={hidePopupHandler}
+                      handleDeleteRow={handleDeleteRow}
                     />
                   </div>
                 ))}
@@ -139,12 +151,14 @@ console.log(users);
           <UserInfoPopup selectedUser={selectedUser} />
         </div>
       )}
-
-      <div className="pagination">
+      <div className='pageinfo'>     
+        <div className="pagination">
         <PreviousPageButton />
         <span className='mt-2'>{currentPage}</span>
         <NextPageButton />
       </div>
+      </div>
+
 
     </div>
   );

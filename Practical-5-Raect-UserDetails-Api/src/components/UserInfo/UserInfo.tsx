@@ -16,22 +16,26 @@ type UserInfoProps = {
   clicksReviewed: number;
   id: number;
   closePopup: () => void;
-  callBack:(data:boolean,index:number,userType:string)=>void;
+  callBack: (data: boolean, index: number, userType: string) => void;
+  hidePopupHandler: () => void;
+  handleDeleteRow: (id: number) => void;
 };
 
 
 const UserInfo: React.FC<UserInfoProps> = (props) => {
   const handleStatus = (e: ChangeEvent<HTMLSelectElement>): void => {
-    props.callBack(!props.status,props.id,props.access);
+    props.callBack(!props.status, props.id, props.access);
   };
   const handleAccess = (e: ChangeEvent<HTMLSelectElement>): void => {
-    props.callBack(props.status,props.id,e.target.value);
+    props.callBack(props.status, props.id, e.target.value);
   };
   return (
 
     <tr className='user-item-main'>
       <td className='image-username' onMouseEnter={() => {
         props.showPopupHandler(props)
+      }} onMouseLeave={() => {
+        props.hidePopupHandler()
       }}>
         <img src={props.avatar} alt={`${props.first_name} ${props.last_name}`} />
         <div>
@@ -39,6 +43,7 @@ const UserInfo: React.FC<UserInfoProps> = (props) => {
           <p className='email'>{props.email}</p>
         </div>
       </td>
+
 
       <td className='ActiveSelect'>
         <select className='active-select' onChange={handleStatus} defaultValue={props.status ? "Active" : "Inactive"}>
@@ -48,18 +53,19 @@ const UserInfo: React.FC<UserInfoProps> = (props) => {
       </td>
 
       <td className='access'>
-        <select className='people' onChange={handleAccess}  defaultValue={props.access}>
+        <select className='people' onChange={handleAccess} defaultValue={props.access}>
           <option value="Owner">Owner</option>
           <option value="Manager">Manager</option>
           <option value="Employee">Employee</option>
         </select>
       </td>
-      
+
       <td className='access-icon'>
         <div className='icons'>
-          {props.id === 1 ? <Lock /> : <Trash />}
+          {props.id === 1 ? <Lock /> : <Trash onClick={() => props.handleDeleteRow(props.id)} />}
         </div>
       </td>
+
     </tr>
 
 

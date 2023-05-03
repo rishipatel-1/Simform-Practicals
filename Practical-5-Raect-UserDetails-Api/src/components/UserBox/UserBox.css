@@ -14,23 +14,26 @@
     overflow: hidden;
     display: inline-block;
   }
-.head-status{
-  padding-right: 13rem;
-}
+
+  .head-status {
+    padding-right: 8rem;
+  }
+
   .container-main {
     width: 100%;
     overflow: auto;
     position: relative;
     height: auto;
-    
+
   }
 
   .container-main::-webkit-scrollbar {
-    width: 0.5em;
+    width: 10vw !important;
+    height: 4px !important;
   }
 
   .container-main::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .header-main {
@@ -59,34 +62,36 @@
     text-align: left;
     list-style: none;
   }
+
   .pagination {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
   }
 
-    button {
-      margin: 0 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      cursor: pointer;
-      color: #555;}
+  button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    color: #555;
+  }
 
-      button:disabled {
-        background-color: #eee;
-        border-color: #ccc;
-        color: #ccc;
-        cursor: default;
-      }
-    
+  button:disabled {
+    background-color: #eee;
+    border-color: #ccc;
+    color: #ccc;
+    cursor: default;
+  }
 
-    span {
-      margin: 0 0.5rem;
-      color: #555;
-    }
- 
+
+  span {
+    margin: 0 0.5rem;
+    color: #555;
+  }
+
   li {
     font-size: 14px;
     color: #8a8b8f;
@@ -114,7 +119,7 @@
     border: none;
     background: #feb24b;
     border-radius: 5px;
-    padding: 8px 29px;
+    padding: 8px 15px;
     color: white;
     font-weight: bold;
   }
@@ -143,18 +148,21 @@
     background: #feb24b;
   }
 
+  .main-container {
+    margin-bottom: 25px;
+  }
+
   .userShow-main {
     width: 270px;
     height: 410px;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 0.8s;
+
   }
 
   .plan-uses-line-front {
     height: 4px;
     width: 100%;
     border-radius: 5px;
-    /* background: ; */
+
   }
 
   .statistic-main p {
@@ -173,7 +181,7 @@
   @media (max-width:600px) {
     .userShow-main {
       width: 61%;
-      height: 84%;
+      height: 74%;
     }
   }
 
@@ -189,84 +197,44 @@
     .Content {
       width: 100%;
       overflow: scroll;
-      display: flex;
-      flex-wrap: wrap-reverse;
-      position: relative;
-      
+
 
     }
-  
+
     .container-main {
       width: 100%;
       order: 2;
     }
-  
+
     .userShow-main {
-      width: 281px;
-      height: 400px;
+      width: 270px;
+      height: 390px;
       position: absolute;
-   
-      top: 4%;
-      left: 356px;
+      top: 11%;
+      right: 11%;
       z-index: 1;
     }
- 
+
     .userShow-main::-webkit-scrollbar {
-      width: 0.5em;
+      width: 10vw;
     }
-  
+
     .userShow-main::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.5);
     }
+
     .Content::-webkit-scrollbar {
       width: 0.5em;
     }
-  
+
     .Content::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
+
   @media (max-width: 400px) {
-    .Content {
-      width: 100%;
-      overflow: scroll;
-      display: flex;
-      flex-wrap: wrap-reverse;
-      position: relative;
-      
 
-    }
-  
-    .container-main {
-      width: 100%;
-      order: 2;
-    }
-  
     .userShow-main {
-      width: 250px;
-      height: 400px;
-      position: absolute;
-   
-      top: 4%;
-      left: 300px;
-      z-index: 1;
-    }
-  
-    .userShow-main::-webkit-scrollbar {
-      width: 0.5em;
-    }
-  
-    .userShow-main::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0);
-    }
-    .Content::-webkit-scrollbar {
-      width: 0.5em;
-    }
-  
-    .Content::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0);
+      right: 3%;
     }
   }
-  
-  
-  

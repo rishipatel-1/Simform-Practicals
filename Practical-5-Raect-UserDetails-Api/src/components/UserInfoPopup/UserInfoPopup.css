@@ -1,0 +1,17 @@
+@media screen and (min-width: 550px) {
+    .cancel-button {
+      display: none;
+    }
+  }
+
+ .cancel-button {
+    position: absolute;
+    top: 1%;
+    right: 0;
+    font-size: 0.8rem;
+    border-radius: 40px !important;
+  }
+  .cancel-button:hover {
+    color: red;
+  }
+  
