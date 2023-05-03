@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import './UserInfoPopup.css';
+import { FaTimes } from 'react-icons/fa';
 
 interface UserInfoPopupProps {
   selectedUser: {
@@ -16,11 +17,33 @@ interface UserInfoPopupProps {
 }
 
 const UserInfoPopup: FC<UserInfoPopupProps> = (props) => {
+  const [showPopup, setShowPopup] = useState(true);
   const planUsesStyle = {
     width: `${Math.floor(Math.random() * 100) + 1}%`
   };
+ 
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 550) {
+        setShowPopup(true);
+      } 
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleCancelClick = () => {
+    setShowPopup(false);
+  };
   return (
+    <>
+        <button className='cancel-button' onClick={handleCancelClick}>
+            <FaTimes />
+          </button>
     <div className='popup-main'>
       <img className='mt-3' src={props.selectedUser.image} alt='' />
       <h4>{props.selectedUser.username} </h4>
@@ -42,6 +65,7 @@ const UserInfoPopup: FC<UserInfoPopupProps> = (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
