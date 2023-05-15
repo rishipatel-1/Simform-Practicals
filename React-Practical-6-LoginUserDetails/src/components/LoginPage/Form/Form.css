@@ -18,6 +18,11 @@
     margin-bottom: 30px;
 
 }
+.LottieAnimation{
+  background-color:rgb(206 222 255);
+  width: 45vw;
+  height: 80vh;
+}
 
 .mainContainer{
     width: 95vw;

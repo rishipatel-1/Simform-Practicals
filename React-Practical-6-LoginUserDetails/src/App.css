@@ -10,9 +10,7 @@
 }
 
 
-.Content {
-z-index: -1;
-}
+
 
 .btn:hover{
   cursor: pointer;

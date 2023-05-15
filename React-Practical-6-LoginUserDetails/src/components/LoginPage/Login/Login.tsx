@@ -42,7 +42,7 @@ const Login: React.FC = () => {
 
       if (loggedInUser) {
         // Navigate to the `/userinfo` route and pass the logged-in user as state
-        navigate('/user{user.name}', { state: { user: loggedInUser } });
+        navigate('/user', { state: { user: loggedInUser } });
         formik.resetForm();
       } else {
          formik.setFieldError('password', 'Email or Password is invalid');
@@ -58,12 +58,12 @@ const Login: React.FC = () => {
       <MDBCard className='loginrow'>
         <MDBRow className='g-0 h-100'>
           <MDBCol md='6' className="contentCenter">
-            <iframe title="Lottie Animation" id="iframebg" className='m-0 p-0 mb-2' style={{ width: "100%", height: "100%" }} src="https://embed.lottiefiles.com/animation/70640"></iframe>
+            <iframe title="Lottie Animation" id="iframebg" className='m-0 p-0 mb-2' src="https://embed.lottiefiles.com/animation/70640"></iframe>
           </MDBCol>
           <MDBCol md='6' className="LoginComponent">
             <div className='loginDiv'>
               <MDBCardBody className='logincard'>
-                <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
+                <h5 className="fw-normal my-4 pb-3">Sign into your account</h5>
                 <form onSubmit={formik.handleSubmit}>
                   <div className="form-group">
                     <input

@@ -275,7 +275,7 @@ const SignUp: React.FC = () => {
           </div>
           <button type="submit" className="btn btn-primary btn-block">Register</button>
           <h6 className='mt-3'>Already have an Account
-            <Link to="/Login">Login</Link></h6>
+            <Link to="/Login" className="ms-3">Login</Link></h6>
         </form>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// signUpReducer.ts
+
 
 import { SIGN_UP, SignUpAction ,ComponentState} from '../actions/signupAction';
 

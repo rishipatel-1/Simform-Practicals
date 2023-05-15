@@ -41,7 +41,7 @@ const UserInfo: React.FC = () => {
               <span className="email float-start">Name: <span className="items-email">{user?.name}</span></span>
               <br />
             </div>
-            <div className="pb-1 w-100">\
+            <div className="pb-1 w-100">
 
             
               <span className="email float-start">Email: <span className="items-email">{user?.email}</span></span>
