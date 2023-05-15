@@ -1,0 +1,54 @@
+.FormContainer{
+    height: 90vh;
+    width: 450px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ImageContainer{
+    height: 90vh;
+    width: 50vw;
+
+}
+.iconMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.mainContainer{
+    width: 95vw;
+    height: 88vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+@media screen and (max-width: 900px) {
+    .ImageContainer{
+        display:none;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .FormContainer{
+      width: 363px;
+      
+    }
+}
+ @media screen and (max-width: 360px) {
+    .FormContainer{
+      width: 300px;
+    
+    }
+}
+@media screen and (max-width: 320px) {
+  .FormContainer{
+    width: 280px;
+ 
+  }
+}
