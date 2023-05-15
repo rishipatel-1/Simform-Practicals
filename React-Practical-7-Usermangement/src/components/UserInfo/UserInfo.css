@@ -1,0 +1,35 @@
+.hello-name{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+.container{
+    min-height: 50vh;
+}
+.modaled{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.successfully{
+    font-size: x-large;
+}
+.additional{
+    font-size: larger;
+    font-weight: 500;
+}
+.email, .phone{
+    font-size: large;
+    font-weight: 400;
+    float: left;
+}
+.items-email, .items-phone{
+    font-size: large;
+    font-weight: 400;
+}
+.Usercontainer{
+    background-color: rgb(255, 241, 241) !important;
+}
+.button-logout{
+bottom: 0%;
+right: 0%;
+   
+}
