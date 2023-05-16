@@ -21,8 +21,8 @@ const UserInfo: React.FC = () => {
     user ? (
       <div className="container d-flex justify-content-center align-items-center rounded-5">
         <div className="row h-100 g-0 Usercontainer rounded-5">
-          <div className="col-12 modaled border rounded-5 py-5 px-4 px-sm-5 d-flex flex-column justify-contnet-center align-items-center ">
-            <p className="display-6 pb-0 mb-0">You have registered</p>
+          <div className="col-12 modaled border rounded-5 py-3 px-4 px-sm-5 d-flex flex-column justify-contnet-center align-items-center ">
+          
             <span className="text-success successfully">Welcome Contrymind User</span>
             <div className="profilePic">
               <img
@@ -50,7 +50,7 @@ const UserInfo: React.FC = () => {
             <div className="pt-1 w-100">
               <span className="phone float-start">Phone No: <span className="items-phone">{user?.mobile}</span></span>
             </div>
-           <div className='w-100 '> <button className='btn btn-warning mt-4 rouded-3 button-logout float-end'> <Link to="/Login" className='text-white'>Logout</Link></button></div>
+            <div className='w-100 '> <button className='btn btn-warning mt-4 rouded-3 button-logout float-end'> <Link to="/Login" className='text-white'>Logout</Link></button></div>
           </div>
      
         </div>

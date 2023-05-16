@@ -260,20 +260,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-@media (max-height: 650px) {
-  .login-container {
-    border-radius: 20px;
-    padding: 15px;
-    width: 80%;
-  }
 
-  .login-container input {
-    font-size: 14px;
-
-    padding:10px;
-    margin-bottom: 15px;
-  }
-}
 
 @media (max-height: 700px) {
   .login-container {
@@ -316,6 +303,20 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 14px;
 
     padding: 0.4rem;
+    margin-bottom: 20px;
+  }
+}
+@media (max-height: 650px) {
+  .login-container {
+    border-radius: 20px;
+    padding: 20px;
+    width: 78%;
+  }
+
+  .login-container input {
+    font-size: 14px;
+
+    padding: 0.1rem;
     margin-bottom: 20px;
   }
 }

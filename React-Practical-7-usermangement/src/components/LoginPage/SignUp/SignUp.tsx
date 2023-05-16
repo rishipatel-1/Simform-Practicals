@@ -66,7 +66,7 @@ const SignUp: React.FC = () => {
 
       if (!values.name && !values.email && !values.mobile && !values.password && !values.confirmPassword && !values.image) {
         errors.name = 'Name is required';
-      } 
+      }   
 
       if (!values.email && !values.mobile && !values.password && !values.confirmPassword && !values.image && !values.mobile) {
         errors.email = 'Email is required';
